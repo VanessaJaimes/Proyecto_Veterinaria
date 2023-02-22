@@ -9,12 +9,15 @@ const app = Vue.createApp({
   },
   methods: {
     async getUsers() {
-      const rest = await fetch('https://randomuser.me/api/?results=5');
+      const rest = await fetch('https://randomuser.me/api/?results=10');
       const data = await rest.json();
       console.log(data);
       this.users = data.results;
+      this.users[0].rol = "Admin";
+      console.log(this.user);
+      // this.users = this.users[0].rol="Admin";
       // this.users = data.results
-      // console.log(this.users);
+      console.log(this.users);
     },
     signIn(e) {
       e.preventDefault();
@@ -24,8 +27,13 @@ const app = Vue.createApp({
         console.log(element.login.username);
         console.log(this.userInput);
         if (element.login.username == this.userInput && element.login.password == this.passwordInput) {
-          window.location.href = '../tabla.html'
+          if (element.rol) {
+            window.location.href = '../admin.html'
+            return;
+          }
+          window.location.href = '../cards.html'
         }
+
       });
 
     }
