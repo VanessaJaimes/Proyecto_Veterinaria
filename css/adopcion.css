@@ -3,7 +3,7 @@ body{
   background-size: cover;
 }
 .register {
-  background: -webkit-linear-gradient(left, #111c55, #4e937a);
+  background: -webkit-linear-gradient(left, #000000, #9ffdfd);
   margin-top: 3%;
   padding: 3%;
 }

@@ -6,6 +6,7 @@ const app = Vue.createApp({
       userInput: '',
       passwordInput: ''
     }
+    
   },
   methods: {
     async getUsers() {
